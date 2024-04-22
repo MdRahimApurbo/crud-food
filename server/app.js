@@ -29,7 +29,7 @@ const rateLimiter = rateLimit({
 app.use(rateLimiter);
 
 // Mongo DB Database Connection
-const URI = "mongodb+srv://apurbo:zF34XPmA60cWbhx6@cluster0.1qn7zhf.mongodb.net/";
+const URI = "mongodb+srv://apurbo:zF34XPmA60cWbhx6@cluster0.1qn7zhf.mongodb.net/foodapp";
 const OPTION = { user: '', pass: '', autoIndex: true };
 
 mongoose.connect(URI, OPTION).then((res) => {
@@ -42,11 +42,11 @@ mongoose.connect(URI, OPTION).then((res) => {
 app.use('/api/v1', router);
 
 // Undefined Route
-app.use('*', (req, res) => {
-    res.status(404).json({
-        status: '404',
-        data: "No Api Found"
-    });
-});
+// app.use('*', (req, res) => {
+//     res.status(404).json({
+//         status: '404',
+//         data: "No Api Found"
+//     });
+// });
 
 module.exports = app;

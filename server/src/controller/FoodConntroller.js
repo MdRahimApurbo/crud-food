@@ -3,87 +3,73 @@ const FoodModel = require('../model/foodmodel')
 
 // create food
 
-exports.CreateFood = (req,res)=>{
-
-    let reqBody = req.body;
-    FoodModel.create(reqBody,(err,data)=> {
-        if(err){
-            res.status(400).json({status:'fail',data:err})
-        }else{
-           res.status(200).json({status:'success',data:data})
-        }
-    })
-
+exports.CreateFood = async (req, res) => {
+    try {
+        let reqBody = req.body;
+        let data = await FoodModel.create(reqBody);
+        res.status(200).json({ status: 'success', data: data });
+    } catch (err) {
+        res.status(400).json({ status: 'fail', data: err });
+    }
 }
+
 
 // Read All Food
 
-exports.ReadAllFood = (req,res)=>{
-
-    let query = {}
-    projecttion = {FoodName}
-    FoodModel.find(query,projecttion,(err,data)=> {
-        if(err){
-            res.status(400).json({status:'fail',data:err})
-        }else{
-           res.status(200).json({status:'success',data:data})
-        }
-    })
-
+exports.ReadAllFood = async (req, res) => {
+    try {
+        let query = {}
+        let data = await FoodModel.find(query);
+        res.status(200).json({ status: 'success', data: data });
+    } catch (err) {
+        res.status(400).json({ status: 'fail', data: err });
+    }
 }
+
+
 
 // Read Food
 
-exports.ReadFood = (req,res)=>{
+exports.ReadFood = async (req, res) => {
 
-    let id = req.params.id;
-    let query = {_id:id}
-    let reqBody = req.body;
-
-    FoodModel.find(query,(err,data)=> {
-        if(err){
-            res.status(400).json({status:'fail',data:err})
-        }else{
-           res.status(200).json({status:'success',data:data})
-        }
-    })
+    try {
+        let id = req.params.id;
+        let query = { _id: id }
+        let data = await FoodModel.find(query);
+        res.status(200).json({ status: 'success', data: data });
+    } catch (err) {
+        res.status(400).json({ status: 'fail', data: err });
+    }
 
 }
 
 
 // Update Food
 
-exports.UpdateFood = (req,res)=>{
-
-    let id = req.params.id;
-    let query = {_id:id}
-    let reqBody = req.body;
-
-    FoodModel.updateOne(query,reqBody,(err,data)=> {
-        if(err){
-            res.status(400).json({status:'fail',data:err})
-        }else{
-           res.status(200).json({status:'success',data:data})
-        }
-    })
-
+exports.UpdateFood = async (req, res) => {
+    try {
+        let id = req.params.id;
+        let query = { _id: id };
+        let reqBody = req.body;
+        let data = await FoodModel.updateOne(query, reqBody);
+        res.status(200).json({ status: 'success', data: reqBody });
+    } catch (err) {
+        res.status(400).json({ status: 'fail', data: err });
+    }
 }
+
 
 
 // Delete Food
 
-exports.DeleteFood = (req,res)=>{
+exports.DeleteFood = async (req, res) => {
+    try {
+        let id = req.params.id;
+        let query = { _id: id };
 
-    let id = req.params.id;
-    let query = {_id:id}
-
-
-    FoodModel.remove(query,(err,data)=> {
-        if(err){
-            res.status(400).json({status:'fail',data:err})
-        }else{
-           res.status(200).json({status:'success',data:data})
-        }
-    })
-
+        let data = await FoodModel.deleteOne(query);
+        res.status(200).json({ status: 'success', data: data });
+    } catch (err) {
+        res.status(400).json({ status: 'fail', data: err });
+    }
 }
