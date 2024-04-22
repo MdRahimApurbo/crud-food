@@ -29,7 +29,7 @@ const rateLimiter = rateLimit({
 app.use(rateLimiter);
 
 // Mongo DB Database Connection
-const URI = "mongodb://127.0.0.1:27017/Mydatabase";
+const URI = "mongodb+srv://apurbo:zF34XPmA60cWbhx6@cluster0.1qn7zhf.mongodb.net/";
 const OPTION = { user: '', pass: '', autoIndex: true };
 
 mongoose.connect(URI, OPTION).then((res) => {
