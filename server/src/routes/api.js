@@ -3,8 +3,6 @@ const FoodConntroller = require('../controller/FoodConntroller')
 const router = express.Router();
 
 
-// start
-
 
 //  create
 

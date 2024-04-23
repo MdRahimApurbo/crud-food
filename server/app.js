@@ -14,13 +14,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 // Security Middleware Implement
-app.use(cors(
-    {
-        origin:["https:crud-food-api.vercel.app"],
-        methods:['POST','GET'],
-        credentials:true
-    }
-));
+app.use(cors());
 app.use(helmet());
 app.use(mongoSanitize());
 app.use(xss());
