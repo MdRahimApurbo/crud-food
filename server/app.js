@@ -41,12 +41,12 @@ mongoose.connect(URI, OPTION).then((res) => {
 // Routing Implement
 app.use('/api/v1', router);
 
-// Undefined Route
-// app.use('*', (req, res) => {
-//     res.status(404).json({
-//         status: '404',
-//         data: "No Api Found"
-//     });
-// });
+//  Undefined Route
+app.use('*', (req, res) => {
+    res.status(404).json({
+        status: '404',
+        data: "No Api Found"
+    });
+});
 
 module.exports = app;
