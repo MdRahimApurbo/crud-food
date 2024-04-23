@@ -16,7 +16,7 @@ const app = express();
 // Security Middleware Implement
 app.use(cors(
     {
-        origin:["https:deplay-crud-apurbo-vercel.app"],
+        origin:["https:crud-food-api-vercel.app"],
         methods:['POST','GET'],
         credentials:true
     }
