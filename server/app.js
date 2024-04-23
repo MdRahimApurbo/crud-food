@@ -14,7 +14,13 @@ const mongoose = require('mongoose');
 const app = express();
 
 // Security Middleware Implement
-app.use(cors());
+app.use(cors(
+    {
+        origin:["https:deplay-crud-apurbo-vercel.app"],
+        methods:['POST','GET'],
+        credentials:true
+    }
+));
 app.use(helmet());
 app.use(mongoSanitize());
 app.use(xss());
@@ -42,6 +48,14 @@ mongoose.connect(URI, OPTION).then((res) => {
 app.use('/api/v1', router);
 
 //  Undefined Route
+
+app.use('/' , (req,res)=>{
+
+    res.json("Hello Node is Running")
+
+})
+
+
 app.use('*', (req, res) => {
     res.status(404).json({
         status: '404',
