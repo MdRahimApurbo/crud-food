@@ -3,7 +3,7 @@ const app = require('./app');
 const dotenv = require('dotenv');
 
 // Load environment variables from config file
-dotenv.config({path:'./config.env'});
+dotenv.config({path:'./.env'});
 
 // Start server
 app.listen(process.env.RUNNING_PORT, function() {
