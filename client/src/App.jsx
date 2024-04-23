@@ -1,16 +1,19 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Content from "./components/Content";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import HomePage from './pages/HomePage';
+import EditFood from "./pages/EditFood";
+import AllFood from "./pages/AllFood";
 
 const App = () => {
   return (
     <div className="flex flex-row gap-5">
-      <div className="bg-[#F1F2F7] p-5 w-[300px] h-screen">
-        <Navbar />
-      </div>
-      <div>
-        <Content />
-      </div>
+       <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<HomePage/>}/>
+                <Route path="/allfood" element={<AllFood/>}/>
+                <Route path="/readfood" element={<EditFood/>}/>
+            </Routes>
+        </BrowserRouter>
     </div>
   );
 };

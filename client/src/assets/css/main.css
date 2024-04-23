@@ -1,0 +1,54 @@
+.navmenu {
+    transition: 0.3s;
+    padding: 20px 20px;
+    border-radius: 5px;
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    color: #273240;
+    --tw-text-opacity: 1;
+    color: rgb(166 171 200 / var(--tw-text-opacity));
+
+}
+
+
+
+.navmenu:hover {
+    background-color: rgb(112 127 221 / var(--tw-bg-opacity));
+    --tw-bg-opacity: .1;
+    --tw-text-opacity: 1;
+    opacity: 1;
+    color: rgb(90 103 186 / var(--tw-text-opacity));
+}
+
+.navmenu.active {
+    opacity: 1;
+    background-color: rgb(112 127 221 / var(--tw-bg-opacity));
+    --tw-bg-opacity: .1;
+    --tw-text-opacity: 1;
+    color: rgb(90 103 186 / var(--tw-text-opacity));
+
+}
+
+.btn {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0.5px;
+    border-radius: 10px;
+    background: #5A67BA;
+    padding: 15px 20px;
+    width: 158px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #707FDD;
+
+}
