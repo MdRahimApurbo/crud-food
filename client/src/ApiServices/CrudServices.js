@@ -44,12 +44,14 @@ export function DeleteFood(foodId) {
 
 
 export function ReadFood(foodId) {
-    return axios.get(`${URL}/readfood/${foodId}`)
-        .then(response => {
-            return response.data; 
-        })
-        .catch(error => {
-            throw error;
-        });
+    try {
+        return axios.get(`${URL}/readfood/${foodId}`)
+            .then(response => {
+                return response.data;
+            });
+    } catch (error) {
+        throw error;
+    }
 }
+
 

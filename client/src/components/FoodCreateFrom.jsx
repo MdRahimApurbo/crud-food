@@ -10,7 +10,7 @@ const FoodCreateFrom = ({ getformData }) => {
   const [formObj, setFormObj] = useState({});
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  useEffect(  () => {
 
     if (getformData) {
       setFormObj(getformData[0]);
