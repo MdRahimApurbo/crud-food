@@ -1,6 +1,6 @@
 import React from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import HomePage from './pages/HomePage';
+import HomePage from "./pages/HomePage";
 import EditFood from "./pages/EditFood";
 import AllFood from "./pages/AllFood";
 

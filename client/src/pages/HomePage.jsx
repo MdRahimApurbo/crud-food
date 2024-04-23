@@ -9,7 +9,7 @@ const HomePage = () => {
     <MasterLayout>
 
       <div>
-        <h2 className="font-medium text-lg">Create Food Item</h2>
+        <h2 className="font-medium text-lg text-[#1F384C]">Create Food Item</h2>
         <div>
           <FoodCreateFrom/>
         </div>

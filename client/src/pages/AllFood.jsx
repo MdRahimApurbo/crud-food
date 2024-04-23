@@ -46,10 +46,10 @@ const AllFood = () => {
   return (
     <MasterLayout>
       <div>
-        <h2 className="font-medium text-lg">All Food List</h2>
+        <h2 className="font-medium text-lg text-[#1F384C]">All Food List</h2>
         {loading ? <Fromloader/> : (
           // Food list
-          <div className="grid grid-cols-4 gap-10 pt-[50px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 pt-[50px]">
             {foodList.data?.map((food, index) => (
               <div
                 key={index}

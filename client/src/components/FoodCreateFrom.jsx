@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import { CreateFood, UpdateFood } from "../ApiServices/CrudServices";
 import { toast } from "react-toastify";
 import Fromloader from "./../loaders/Fromloader";
+import {useNavigate} from "react-router-dom";
 
-const FoodCreateFrom = ({ getformData , id }) => {
+const FoodCreateFrom = ({ getformData }) => {
+
+  let navigate=new useNavigate();
   const [formObj, setFormObj] = useState({});
   const [loading, setLoading] = useState(true);
 
@@ -38,6 +41,7 @@ const FoodCreateFrom = ({ getformData , id }) => {
           setFormObj(response.data);
         } else {
           setFormObj({});
+          navigate("/allfood");
         }
         toast.success(
           `Food ${formObj._id ? "updated" : "created"} successfully`
@@ -63,8 +67,8 @@ const FoodCreateFrom = ({ getformData , id }) => {
       { loading ? (
         <Fromloader />
       ) : (
-        <form className="pt-4" onSubmit={handleSubmit}>
-          <div className="grid grid-cols-3 gap-10">
+        <form className="pt-[50px]" onSubmit={handleSubmit}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10">
             <div className="flex flex-col gap-2">
               <label htmlFor="fname">Food Name</label>
               <input

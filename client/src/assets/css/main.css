@@ -122,3 +122,17 @@
     line-height: 20px;
     letter-spacing: 0.5px;
 }
+
+@media (max-width: 1024px) {
+
+    .navmenu {
+        padding: 10px;
+    }
+
+    .editbtn,
+    .deletebtn {
+
+        padding: 10px 20px;
+
+    }
+}

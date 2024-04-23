@@ -22,9 +22,9 @@ const EditFood = () => {
   return (
     <MasterLayout>
       <div>
-        <h2 className="font-medium text-lg">Edit Food Item</h2>
+        <h2 className="font-medium text-lg text-[#1F384C]">Edit Food Item</h2>
         <div>
-          <FoodCreateFrom id={id} getformData={formData?.data} />
+          <FoodCreateFrom  getformData={formData?.data} />
         </div>
       </div>
     </MasterLayout>

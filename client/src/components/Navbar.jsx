@@ -1,16 +1,18 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/images/logo.png";
+import logomobile from "../assets/images/logomobile.png";
 
 const Navbar = () => {
   return (
     <div>
-      <div className="p-5 border-b-2 border-[#C8CBD9]">
-        <img className="w-[98px] h-[24px]" src={logo} alt="logo" />
+      <div className="p-5  border-b border-[#C8CBD9]">
+        <img className="w-[98px] h-[24px] hidden sm:block" src={logo} alt="logo" />
+        <img className="w-[98px] h-[24px] block sm:hidden" src={logomobile} alt="logo" />
       </div>
-      <div className="flex flex-col px-5 py-10 gap-2">
+      <div className="flex flex-col p-2 sm:p-5  py-10 gap-2">
         <div>
-          <h4 className="font-normal text-[11px] tracking-[1px] px-5">Menu</h4>
+          <h4 className="text-[#082431] font-poppins text-[11px] font-normal leading-tight tracking-wide text-center  sm:px-5 sm:text-left ">Menu</h4>
         </div>
         <NavLink
           className="navmenu text-xxl flex items-center gap-2"
@@ -31,7 +33,7 @@ const Navbar = () => {
               fill="currentColor"
             />
           </svg>
-          <span className="navmenuitem">Create Food</span>
+          <span className="navmenuitem hidden sm:block">Create Food</span>
         </NavLink>
         <NavLink
           className="navmenu text-xxl flex items-center gap-2"
@@ -51,7 +53,7 @@ const Navbar = () => {
               fill="currentColor"
             />
           </svg>
-          <span className="navmenuitem">All Food</span>
+          <span className="navmenuitem hidden sm:block">All Food</span>
         </NavLink>
       </div>
     </div>
