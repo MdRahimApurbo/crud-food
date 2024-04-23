@@ -12,6 +12,16 @@ export function CreateFood(reqBody) {
         });
 }
 
+export function UpdateFood(foodId, reqBody) {
+    return axios.post(`${URL}/updatefood/${foodId}`, reqBody)
+        .then(response => {
+            return response.data
+        })
+        .catch(error => {
+            throw error;
+        });
+}
+
 export function ReadFoodAll() {
     return axios.get(`${URL}/readallfood`)
         .then(response => {
@@ -43,10 +53,3 @@ export function ReadFood(foodId) {
         });
 }
 
-export function UpdateFood(foodId, reqBody) {
-    return axios.put(`${URL}/updatefood/${foodId}`, reqBody)
-        .then(response => response.data)
-        .catch(error => {
-            throw error;
-        });
-}

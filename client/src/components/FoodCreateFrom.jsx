@@ -3,10 +3,9 @@ import { CreateFood, UpdateFood } from "../ApiServices/CrudServices";
 import { toast } from "react-toastify";
 import Fromloader from "./../loaders/Fromloader";
 
-const FoodCreateFrom = ({ getformData }) => {
+const FoodCreateFrom = ({ getformData , id }) => {
   const [formObj, setFormObj] = useState({});
   const [loading, setLoading] = useState(true);
-
 
   useEffect(() => {
 
@@ -28,13 +27,18 @@ const FoodCreateFrom = ({ getformData }) => {
     }));
   };
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const apiCall = formObj._id ? UpdateFood : CreateFood;
-    apiCall(formObj._id, formObj)
+    const apiParams = formObj._id ? [formObj._id, formObj] : [formObj]; 
+    apiCall(...apiParams) 
       .then((response) => {
-        console.log(response);
-        setFormObj({});
+        if (formObj._id) {
+          setFormObj(response.data);
+        } else {
+          setFormObj({});
+        }
         toast.success(
           `Food ${formObj._id ? "updated" : "created"} successfully`
         );
@@ -49,6 +53,10 @@ const FoodCreateFrom = ({ getformData }) => {
         toast.error(`Failed to ${formObj._id ? "update" : "create"} food`);
       });
   };
+  
+  
+  
+  
 
   return (
     <div>

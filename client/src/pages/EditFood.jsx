@@ -24,7 +24,7 @@ const EditFood = () => {
       <div>
         <h2 className="font-medium text-lg">Edit Food Item</h2>
         <div>
-          <FoodCreateFrom getformData={formData?.data} />
+          <FoodCreateFrom id={id} getformData={formData?.data} />
         </div>
       </div>
     </MasterLayout>
