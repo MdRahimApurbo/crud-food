@@ -39,9 +39,8 @@ mongoose.connect(URI, OPTION).then((res) => {
 });
 
 // Routing Implement
-app.use('/api/v1', router);
 
-//  Undefined Route
+app.use('/api/v1', router);
 
 app.use('/' , (req,res)=>{
 
