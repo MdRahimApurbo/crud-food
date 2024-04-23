@@ -1,14 +1,17 @@
 import React from "react";
 import MasterLayout from "../components/MasterLayout";
-import FoodFromLayout from "../components/FoodFromLayout";
+import FoodCreateFrom from "../components/FoodCreateFrom";
+
 
 const HomePage = () => {
+  
   return (
     <MasterLayout>
+
       <div>
         <h2 className="font-medium text-lg">Create Food Item</h2>
         <div>
-          <FoodFromLayout/>
+          <FoodCreateFrom/>
         </div>
       </div>
     </MasterLayout>

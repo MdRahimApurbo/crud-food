@@ -1,6 +1,52 @@
 import axios from 'axios';
 
-export function Create(reqBody){
-    let URL = '/api/v1/createfood';
-    axios.post(URL,reqBody).then().catch()
+const URL = 'http://localhost:5500/api/v1';
+
+export function CreateFood(reqBody) {
+    return axios.post( `${URL}/createfood`, reqBody)
+        .then(response => {
+            return response.data; 
+        })
+        .catch(error => {
+            throw error;
+        });
+}
+
+export function ReadFoodAll() {
+    return axios.get(`${URL}/readallfood`)
+        .then(response => {
+            return response.data; 
+        })
+        .catch(error => {
+            throw error;
+        });
+}
+
+export function DeleteFood(foodId) {
+    return axios.get(`${URL}/deletefood/${foodId}`)
+        .then(response => {
+            return response.data; 
+        })
+        .catch(error => {
+            throw error;
+        });
+}
+
+
+export function ReadFood(foodId) {
+    return axios.get(`${URL}/readfood/${foodId}`)
+        .then(response => {
+            return response.data; 
+        })
+        .catch(error => {
+            throw error;
+        });
+}
+
+export function UpdateFood(foodId, reqBody) {
+    return axios.put(`${URL}/updatefood/${foodId}`, reqBody)
+        .then(response => response.data)
+        .catch(error => {
+            throw error;
+        });
 }
